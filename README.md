@@ -1,4 +1,4 @@
-# Freelance OS
+# Freelance System
 
 A web application designed to help freelancers manage clients, projects, and tasks in one place.
 
