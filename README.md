@@ -1,73 +1,113 @@
-# React + TypeScript + Vite
+# Freelance OS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application designed to help freelancers manage clients, projects, and tasks in one place.
 
-Currently, two official plugins are available:
+This project is built as a portfolio to demonstrate fullstack development skills using **React (Vite + TypeScript)** and **Supabase** (PostgreSQL, Auth, API).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### ✅ Current
 
-## Expanding the ESLint configuration
+- Client management: create and list clients (connected to Supabase `clients` table)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🚧 Planned
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Authentication (Supabase Auth)
+- Project & task management
+- Progress tracking & simple analytics
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠 Tech Stack
+
+| Layer | Technology |
+|--------|-----------|
+| Frontend | React 19, Vite 8, TypeScript |
+| Backend / BaaS | Supabase (PostgreSQL, Auth, REST/Realtime) |
+| State | React Hooks |
+| Database | PostgreSQL (melalui Supabase) |
+
+---
+
+## 🧱 Database
+
+The application uses a relational structure:
+
+- **Clients** → belong to a user
+- **Projects** → belong to a client
+- **Tasks** → belong to a project
+
+---
+
+## 📋 Prerequisites
+
+- [Node.js](https://nodejs.org/) version 20 or newer (recommended for Vite 8)
+- [Supabase](https://supabase.com/) account with a project
+
+---
+
+## Setup
+
+### 1. Clone repository
+
+```bash
+git clone https://github.com/<username>/<nama-repo>.git
+cd <nama-repo>
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+### 3. Environment variables
+
+Copy the environment template and fill in your Supabase credentials (from Settings → API):
+
+cp .env.example .env
+
+Edit .env:
+
+VITE_SUPABASE_URL=https://<project-ref>.supabase.co
+VITE_SUPABASE_ANON_KEY=<anon_public_key>
+
+### 4. Run application
+
+```bash
+npm run dev
+```
+
+---
+
+## 🎯 Goals
+
+- Build a real-world freelance management system
+- Demonstrate fullstack integration (React + Supabase)
+- Maintain clean and scalable project structure
+
+---
+
+## Roadmap
+
+- [x] Project setup (Vite + React + TypeScript) and Supabase client
+- [x] Client: create & read (list + add)
+- [ ] Authentication
+- [ ] Project management
+- [ ] Task management
+- [ ] Dashboard & analytics
+
+---
+
+## 🚀 Live Preview (Coming Soon)
+
+---
+
+## 🤝 Contributing
+
+This is a personal portfolio project by Risto, built to demonstrate fullstack development skills using React and Supabase.
+
+Contributions, suggestions, and feedback are welcome for learning and improvement purposes.
+Feel free to fork this repository or submit a pull request.
