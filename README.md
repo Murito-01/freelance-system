@@ -71,8 +71,8 @@ cp .env.example .env
 
 Edit .env:
 
-VITE_SUPABASE_URL=https://<project-ref>.supabase.co
-VITE_SUPABASE_ANON_KEY=<anon_public_key>
+- VITE_SUPABASE_URL=https://<project-ref>.supabase.co
+- VITE_SUPABASE_ANON_KEY=<anon_public_key>
 
 ### 4. Run application
 
